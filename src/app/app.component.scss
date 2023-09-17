@@ -1,0 +1,39 @@
+div.app{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+
+    header{
+        height: 120px;
+        width: 100%;
+        background-color: #aaaaaa;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ffffff;
+        flex-shrink: 0;
+    }
+
+    div.sidebar{
+        width: 250px;
+        height: 100%;
+        background-color: #aaaaaa;
+        display: flex;
+        flex-direction: column;
+
+        div.sidebar-menu{
+            flex-grow: 1;
+        }
+    }
+
+    div.main{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        div.content{
+            flex-grow: 1;
+            height: 100%;
+        }
+    }
+}
