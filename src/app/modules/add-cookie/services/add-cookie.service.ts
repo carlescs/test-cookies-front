@@ -11,6 +11,6 @@ export class AddCookieService {
   constructor(private http:HttpClient) { }
 
   public AddCookie(name:string, value:string):Observable<AddCookieResponse>{
-    return this.http.post<AddCookieResponse>('http://spring.company.cat/set-cookie',{name:name, value:value});
+    return this.http.post<AddCookieResponse>('https://spring.company.cat/set-cookie',{name:name, value:value});
   }
 }
