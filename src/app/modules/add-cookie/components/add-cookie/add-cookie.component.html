@@ -1,1 +1,7 @@
-<p>add-cookie works!</p>
+<form [formGroup]="formgroup" (ngSubmit)="save()">
+    <input type="text" formControlName="name" placeholder="Name">
+    <input type="text" formControlName="value" placeholder="Value">
+    <p>
+        <button type="submit" [disabled]="!formgroup.valid">Save</button>
+    </p>
+</form>
