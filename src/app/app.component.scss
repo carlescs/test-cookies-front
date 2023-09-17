@@ -23,7 +23,30 @@ div.app{
 
         div.sidebar-menu{
             flex-grow: 1;
+
+            nav{
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    li{
+                        padding: 10px;
+                        border-bottom: 1px solid #ffffff;
+                        cursor: pointer;
+
+                        &:has(>a.active){
+                            background-color: #ffffff;
+                        }
+
+                        &:hover{
+                            background-color: #cccccc;
+                        }
+                    }
+                }
+            }
         }
+
     }
 
     div.main{
@@ -34,6 +57,7 @@ div.app{
         div.content{
             flex-grow: 1;
             height: 100%;
+            padding: 20px;
         }
     }
 }

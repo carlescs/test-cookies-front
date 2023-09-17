@@ -1,7 +1,14 @@
 <div class="app">
   <div class="sidebar">
     <header></header>
-    <div class="sidebar-menu"></div>
+    <div class="sidebar-menu">
+        <nav>
+            <ul>
+                <li><a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+                <li><a [routerLink]="['/','add-cookie']" routerLinkActive="active">Add Cookie</a></li>
+            </ul>
+        </nav>
+    </div>
   </div>
   <div class="main">
     <header>
