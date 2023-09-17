@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,11 +8,6 @@ import { RouterModule } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   title = 'test-cookies-front';
-  cookies:string = document.cookie;
-
-  ngOnInit(): void {
-    document.cookie="anotherCookie=anotherCookieValue;Domain=company.cat;Path=/;SameSite=None;Secure=true;HttpOnly=true;Max-Age=3600;"
-  }
 }
