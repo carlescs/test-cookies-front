@@ -31,9 +31,15 @@ div.app{
                     margin: 0;
 
                     li{
-                        padding: 10px;
                         border-bottom: 1px solid #ffffff;
                         cursor: pointer;
+
+                        a{
+                            display: block;
+                            height: 100%;
+                            width: 100%;
+                            padding: 10px;
+                        }
 
                         &:has(>a.active){
                             background-color: #ffffff;
