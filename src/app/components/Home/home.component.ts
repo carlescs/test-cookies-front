@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit{
   cookies:string = document.cookie;
   
   ngOnInit(): void {
-    document.cookie="anotherCookie=anotherCookieValue;Domain=company.cat;Path=/;SameSite=None;Secure=true;HttpOnly=true;Max-Age=3600;"
+    document.cookie="another=testing;Domain=company.cat;Path=/;SameSite=None;Secure;HttpOnly;Max-Age=-1;"
   }
 
 }
