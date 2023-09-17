@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 })
 export class AppComponent implements OnInit{
   title = 'test-cookies-front';
+  cookies:string = document.cookie;
 
   ngOnInit(): void {
     document.cookie="anotherCookie=anotherCookieValue; domain=company.cat;Secure;HttpOnly;Max-Age=3600;"
