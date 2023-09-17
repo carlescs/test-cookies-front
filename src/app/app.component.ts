@@ -13,6 +13,6 @@ export class AppComponent implements OnInit{
   cookies:string = document.cookie;
 
   ngOnInit(): void {
-    document.cookie="anotherCookie=anotherCookieValue;Domain=.company.cat;Path=/;Secure;HttpOnly;"
+    document.cookie="anotherCookie=anotherCookieValue;Domain=testfront.company.cat;Path=/;Secure;HttpOnly;"
   }
 }
