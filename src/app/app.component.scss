@@ -3,6 +3,7 @@ div.app{
     width: 100vw;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 
     header{
         height: 120px;
@@ -59,11 +60,13 @@ div.app{
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
 
         div.content{
             flex-grow: 1;
             height: 100%;
             padding: 20px;
+            overflow: auto;
         }
     }
 }
