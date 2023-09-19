@@ -19,8 +19,8 @@ export class AddCookieComponent {
     });
   }
 
-  public save(){
-    this._addCookieService.AddCookie(this.formgroup.value.name, this.formgroup.value.value)
+  public save(withCredentials: boolean){
+    this._addCookieService.AddCookie(this.formgroup.value.name, this.formgroup.value.value, withCredentials)
     .subscribe(()=>alert("OK"));
   }
 }

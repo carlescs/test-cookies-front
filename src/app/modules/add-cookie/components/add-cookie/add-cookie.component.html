@@ -1,7 +1,8 @@
-<form [formGroup]="formgroup" (ngSubmit)="save()">
+<form [formGroup]="formgroup" (ngSubmit)="save(true)">
     <input type="text" formControlName="name" placeholder="Name">
     <input type="text" formControlName="value" placeholder="Value">
     <p>
         <button type="submit" [disabled]="!formgroup.valid">Save</button>
+        <button type="button" [disabled]="!formgroup.valid" (click)="save(false)">Save without credentials</button>
     </p>
 </form>
