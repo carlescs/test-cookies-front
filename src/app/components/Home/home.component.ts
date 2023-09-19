@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit{
   cookies:string = document.cookie;
+
+  url = "https://spring.company.cat/file";
   
   ngOnInit(): void {
     document.cookie="another=testing;Domain=company.cat;";
