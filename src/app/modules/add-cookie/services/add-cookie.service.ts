@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { AddCookieResponse } from '../models/add-cookie.models';
 import { Observable } from 'rxjs';
 
@@ -24,6 +24,26 @@ export class AddCookieService {
       return this.http.post<AddCookieResponse>(
         'https://spring.company.cat/set-cookie',
         { name: name, value: value }
+      );
+  }
+
+  public AddCookieGet(
+    name: string,
+    value: string,
+    withCredentials: boolean
+  ): Observable<AddCookieResponse> {
+    const params=new HttpParams()
+      .set('name',name)
+      .set('value',value);
+    if (withCredentials)
+      return this.http.get<AddCookieResponse>(
+        'https://spring.company.cat/set-cookie',
+        { withCredentials: true, params: params}
+      );
+    else
+      return this.http.get<AddCookieResponse>(
+        'https://spring.company.cat/set-cookie',
+        { params: params }
       );
   }
 }

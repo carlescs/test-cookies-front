@@ -10,17 +10,22 @@ import { AddCookieService } from '../../services/add-cookie.service';
   styleUrls: ['./add-cookie.component.scss'],
 })
 export class AddCookieComponent {
-  public formgroup:FormGroup;
+  public formgroup: FormGroup;
 
-  constructor(private _addCookieService: AddCookieService, fb: FormBuilder) { 
+  constructor(private _addCookieService: AddCookieService, fb: FormBuilder) {
     this.formgroup = fb.group({
       name: new FormControl('', [Validators.required]),
       value: new FormControl('', [Validators.required])
     });
   }
 
-  public save(withCredentials: boolean){
-    this._addCookieService.AddCookie(this.formgroup.value.name, this.formgroup.value.value, withCredentials)
-    .subscribe(()=>alert("OK"));
+  public save(withCredentials: boolean, get = false) {
+    if (get) {
+      this._addCookieService.AddCookieGet(this.formgroup.value.name, this.formgroup.value.value, withCredentials)
+        .subscribe(() => alert("OK"));
+    } else {
+      this._addCookieService.AddCookie(this.formgroup.value.name, this.formgroup.value.value, withCredentials)
+        .subscribe(() => alert("OK"));
+    }
   }
 }
