@@ -22,10 +22,16 @@ export class AddCookieComponent {
   public save(withCredentials: boolean, get = false, noCors = false) {
     if (get) {
       this._addCookieService.AddCookieGet(this.formgroup.value.name, this.formgroup.value.value, withCredentials)
-        .subscribe(() => alert("OK"));
+        .subscribe({
+          next: () => alert("OK"),
+          error: err => alert(JSON.stringify(err))
+        });
     } else {
       this._addCookieService.AddCookie(this.formgroup.value.name, this.formgroup.value.value, withCredentials, noCors)
-        .subscribe(() => alert("OK"));
+        .subscribe({
+          next: () => alert("OK"),
+          error: err => alert(JSON.stringify(err))
+        });
     }
   }
 }
