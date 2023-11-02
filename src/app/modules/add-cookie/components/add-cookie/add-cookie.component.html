@@ -2,8 +2,10 @@
     <input type="text" formControlName="name" placeholder="Name">
     <input type="text" formControlName="value" placeholder="Value">
     <p>
-        <button type="submit" [disabled]="!formgroup.valid">Save</button>
-        <button type="button" [disabled]="!formgroup.valid" (click)="save(false)">Save without credentials</button>
+        <button type="submit" [disabled]="!formgroup.valid">Save POST</button>
+        <button type="button" [disabled]="!formgroup.valid" (click)="save(false)">Save POST without credentials</button>
+        <button type="button" [disabled]="!formgroup.valid" (click)="save(true,false,true)">Save POST NoCors</button>
+        <button type="button" [disabled]="!formgroup.valid" (click)="save(false,false,true)">Save POST NoCors without credentials</button>
         <button type="button" [disabled]="!formgroup.valid" (click)="save(false, true)">Save GET</button>
         <button type="button" [disabled]="!formgroup.valid" (click)="save(false, true)">Save GET without credentials</button>
     </p>

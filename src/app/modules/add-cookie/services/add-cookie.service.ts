@@ -12,17 +12,19 @@ export class AddCookieService {
   public AddCookie(
     name: string,
     value: string,
-    withCredentials: boolean
+    withCredentials: boolean,
+    noCors=false
   ): Observable<AddCookieResponse> {
+    const url = noCors?'https://spring.company.cat/set-cookie-no-cors':'https://spring.company.cat/set-cookie';
     if (withCredentials)
       return this.http.post<AddCookieResponse>(
-        'https://spring.company.cat/set-cookie',
+        url,
         { name: name, value: value },
         { withCredentials: true }
       );
     else
       return this.http.post<AddCookieResponse>(
-        'https://spring.company.cat/set-cookie',
+        url,
         { name: name, value: value }
       );
   }
